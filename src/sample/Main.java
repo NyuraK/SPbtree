@@ -3,7 +3,6 @@ package sample;
 import com.lynden.gmapsfx.GoogleMapView;
 import com.lynden.gmapsfx.MapComponentInitializedListener;
 import com.lynden.gmapsfx.javascript.object.*;
-import com.sun.prism.PhongMaterial;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,9 +16,10 @@ public class Main extends Application implements MapComponentInitializedListener
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-
         mapView = new GoogleMapView();
         mapView.addMapInitializedListener(this);
+
+        mapView.setKey("It's simply for web");
 
         Scene scene = new Scene(mapView);
 
